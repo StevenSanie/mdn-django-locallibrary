@@ -1,0 +1,7 @@
+{% extends 'catalog/base.html' %}
+{% block title %} <title>Logged Out Successfuly! </title> {% endblock %}
+
+{% block content %}
+<h1>You have been logged out Successfuly!</h1>
+<a href="{% url 'login' %}">Login Again</a>
+{% endblock content %}

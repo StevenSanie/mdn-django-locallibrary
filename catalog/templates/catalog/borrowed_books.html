@@ -1,0 +1,30 @@
+{% extends 'catalog/base.html' %}
+
+{% block title %} <title>Borrowed Books </title> {% endblock title %}
+{% block content %}
+<h1>Borrowed Books</h1>
+{% for books in object_list %}
+{% endfor %}
+
+<div class="container">
+	<table class="table table-fluid">
+		<thead>
+			<th>Book Title</th>
+			<th>Borrower</th>
+			<th>Action</th>
+		</thead>
+		<tbody>
+
+			{% for bookinstance in object_list %}
+			<tr class="{% if bookinstance.is_overdue %} text-danger {% endif %}">
+				<td>{{bookinstance.book.title}}</td>
+				<td>{{bookinstance.borrower}}</td>
+				<td><a href="{% url 'renew_book' bookinstance.id %}">Renew</a></td>
+			</tr>
+			{% endfor %}
+			
+		</tbody>
+	</table>
+</div>
+
+{% endblock content %}

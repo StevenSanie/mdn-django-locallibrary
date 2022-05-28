@@ -1,0 +1,24 @@
+{% extends "catalog/base.html" %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+{% block title %} <title> Library Home</title> {% endblock %}
+
+{% block content %}
+  <h1>Local Library Home</h1>
+  <p>Welcome to LocalLibrary, a website developed by <em>Mozilla Developer Network</em>!</p>
+  <h2>Dynamic content</h2>
+  <p>The library has the following record counts:</p>
+
+  <ul>
+    <li> {{ num_books }} <strong>Books:</strong></li>
+    <li> {{ num_instances }} <strong>Copies:</strong></li>
+    <li>{{ num_instances_available }} <strong>Copies available:</strong>  </li>
+    <li> {{ num_authors }} <strong>Authors:</strong></li>
+	<li>{{genres}} <strong>Genres</strong> </li>
+	<li>{{num_visits}} <strong>Visits</strong> </li>
+  </ul>
+
+
+{% endblock %}
